@@ -40,17 +40,17 @@ Các từ khoá "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", 
 
 1. Phần mềm sử dụng phiên bản ngữ nghĩa PHẢI khai báo một API công khai. 
 API này có thể được khai báo trong chính mã hoặc tồn tại trong tài liệu. 
-Tuy nhiên nó được thực hiện, nó phải chính xác và toàn diện.
+Cho dù làm thế nào, nó phải chính xác và toàn diện.
 
-2. Một phiên bản đánh số bình thường phải (MUST) theo chuẩn X.Y.Z ở đó X, Y, và Z là các số nguyên không âm, 
+2. Một phiên bản bình thưởng phải (MUST) tuân theo  chuẩn X.Y.Z ở đó X, Y, và Z là các số nguyên không âm, 
 và phải không (MUST NOT) chứa số 0 đầu hàng. X là phiên bản chính, 
-Y là phiên bản phụ và Z là phiên bản vá. Mỗi thành phần phải (MUST) tăng các con số. Cho ví dụ: 1.9.0 -> 1.10.0 -> 1.11.0.
+Y là phiên bản phụ và Z là phiên bản vá. Mỗi thành phần phải là các số có tính tăng dần. Cho ví dụ: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-3. Mỗi khi một phiên bản package được phát hành, các nội dung của phiên bản không được (MUST NOT) chỉnh sửa.
+3. Mỗi khi một gói phiên bản được phát hành, các nội dung của phiên bản không được (MUST NOT) chỉnh sửa.
  Bất kỳ thay đổi nào phải (MUST) được phát hành trong phiên bản mới.
 
 4. Phiên bản chính zero (0.y.z) dành cho sự phát triển ban đầu.
-Mọi thứ có thể thay đổi bất cứ lúc nào. API công cộng không được coi là ổn định.
+Mọi thứ có thể thay đổi bất cứ lúc nào. API công khai không được coi là ổn định.
 
 5. Phiên bản 1.0.0 định nghĩa API công khai. Cách thức mà số phiên bản được tăng 
 lên sau khi bản phát hành này phụ thuộc vào API công khai này và cách nó thay đổi.
@@ -61,21 +61,21 @@ lên sau khi bản phát hành này phụ thuộc vào API công khai này và c
 7. Phiên bản phụ Y (x.Y.z | x > 0) phải (MUST) được tăng nếu tính năng mới tương thích với API public đã được giới thiệu. 
 Nó phải (MUST) được tăng nếu bất kỳ tính năng API public được đánh dấu là không dùng nữa. 
 Nó có thể (MAY) được tăng nếu tính năng mới là đáng kể hoặc cải tiến trong private code. 
-Nó có thể (MAY) bao hồm các mức thay đổi của bản vá. Phiên bản vá phải MUST được đưa về khi phiên bản phụ tăng.
+Nó có thể (MAY) bao hồm các mức thay đổi của bản vá. Phiên bản vá phải (MUST) được đưa về 0 khi phiên bản phụ tăng.
 
 8. Phiên bản chính X (X.y.z | X > 0) phải (MUST) được tăng nếu mọi thay đổi không tương thích với API public đã giới thiệu. 
 Nó có thể (MAY) cũng bao gồm các mức thay đổi bản phụ và bản vá.Bản vá và bản phụ phải được đưa về 0 khi phiên bản chính tăng.
 
-9. Một phiên bản pre-release có thể (MAY) được biểu thị bằng cách thêm dấu gạch ngang '-' và một chuỗi dấu chấm '.' để định danh ngay sau phiên bản vá lỗi (patch version). Các tên định danh phải (MUST) chỉ bao bồm các ký tự ASCII và dấu gạch ngang [0-9A-Za-z-]. Các tên định danh không được (MUST NOT) trống. Số trong định danh phải không (MUST NOT) bao gồm số 0 ở đầu. 
-Phiên bản pre-release có quyền ưu tiên thấp hơn phiên bản bình thường. 
-Một phiên bản pre-release là phiên bản không ổn định và có thể không đáp ứng về tính tương thích như các phiên bản bình thường.
+9. Một phiên bản trước khi phát hành có thể (MAY) được biểu thị bằng cách thêm dấu gạch ngang '-' và một chuỗi dấu chấm '.' để định danh ngay sau phiên bản vá lỗi (patch version). Các tên định danh phải (MUST) chỉ bao bồm các ký tự ASCII và dấu gạch ngang [0-9A-Za-z-]. Các tên định danh không được (MUST NOT) trống. Số trong định danh phải không (MUST NOT) bao gồm số 0 ở đầu. 
+Phiên bản trước khi phát hành có quyền ưu tiên thấp hơn phiên bản bình thường. 
+Một phiên bản trước khi phát hành là phiên bản không ổn định và có thể không đáp ứng về tính tương thích như các phiên bản bình thường.
 Ví dụ: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
 10. Các bản metadata có thể (MAY) được biểu thị bằng cách thêm các một dấu cộng '+' và một loạt các dấu chấm '.' để tách các định danh ngay sau số hiệu của các bản vá hoặc bản pre-release. Các định danh phải (MUST) chỉ bao gồm các ký tự ASCII và dấu gạch ngang [0-9A-Za-z-].Các định danh không được (MUST NOT) trống. Các bản metadata phải (MUST) được bỏ qua khi xác định độ ưu tiên của các phiên bản. 
-Do đó hai phiên bản mà chỉ khác nhau ở bản metadat thì có thể được coi là tương đồng. Ví dụ: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
+Do đó hai phiên bản mà chỉ khác nhau ở bản metadata thì có thể được coi là tương đồng. Ví dụ: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.
 
-11. Ưu tiên đề cập đến cách các phiên bản được so sánh với nhau khi đặt hàng
- Quyền ưu tiên phải (MUST) được tính toán bằng cách tách các phiên bản thành số nhận diện phiên bản chính (major), phụ (minor), bản vá (patch) và tiền phát hành (pre-release) trong khi gọi (Bản metadata không được tính vào quyền ưu tiên). Precedence được xác định bởi sự khác biệt đầu tiên khi so sánh mỗi định danh từ trái sang phải: phiên bản Major, minor, và patch luôn luôn được so sánh về số. Ví dụ: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.Khi các phiên bản major, minor, và patch bằng nhau, một phiên bản pre-release có ưu tiên thấp hơn phiên bản bình thường. Ví dụ: 1.0.0-alpha < 1.0.0. Quyền ưu tiên cho 2 phiên bản pre-release mà giống nhau về phiên bản major, minor, và patch phải (MUST) được xác định bằng cách so sánh mỗi dấu phân tách từ trái sang phải cho đến khi tìm thấy một sự khác biệt: 
+11. Độ ưu tiên dùng để so sánh các phiên bản với nhau khi sắp xếp
+ Quyền ưu tiên phải (MUST) được tính toán bằng cách tách các phiên bản thành số nhận diện phiên bản chính (major), phụ (minor), bản vá (patch) và tiền phát hành (pre-release) theo thứ tự (Bản metadata không được tính vào quyền ưu tiên). Độ ưu tiên được xác định bởi sự khác biệt đầu tiên khi so sánh mỗi định danh từ trái sang phải: phiên bản Major, minor, và patch luôn luôn được so sánh về số. Ví dụ: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.Khi các phiên bản major, minor, và patch bằng nhau, một phiên bản pre-release có ưu tiên thấp hơn phiên bản bình thường. Ví dụ: 1.0.0-alpha < 1.0.0. Quyền ưu tiên cho 2 phiên bản pre-release mà giống nhau về phiên bản major, minor, và patch phải (MUST) được xác định bằng cách so sánh mỗi dấu phân tách từ trái sang phải cho đến khi tìm thấy một sự khác biệt: 
  định danh chỉ bao gồm các chữ số được so sánh về số và định danh với chữ cái hoặc dấu gạch ngang được so sánh theo thứ thự ASCII. 
  Các định danh số luôn có độ ưu tiên thấp hơn các định danh không phải là số. 
  Một tập lớn các bản pre-release có ưu tiên lớn hơn so với bản nhỏ hơn, nếu tất cả các định danh trước đố bằng nhau Ví dụ: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
@@ -146,7 +146,7 @@ Backus–Naur Form Grammar for Valid SemVer Versions
                | "y" | "z"
 
 
-Why Use Semantic Versioning?
+Tại sao phải sử dụng Semantic Versioning?
 ----------------------------
 
 Đây không phải là một ý tưởng mới hay cách mạng. Trên thực tế, bạn có thể làm một cái gì đó gần với điều này.
